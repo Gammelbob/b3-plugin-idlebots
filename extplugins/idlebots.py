@@ -1,4 +1,4 @@
-# Copyright (C) 2010 Gammelbob
+# 2010 Gammelbob
 # Inspired by the bot plugin from Beber888
 #
 #
