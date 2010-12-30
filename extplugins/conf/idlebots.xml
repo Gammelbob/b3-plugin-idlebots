@@ -1,0 +1,39 @@
+<configuration plugin="idlebots">
+
+	<settings name="settings">
+		<!-- Idlebot Configuration-->
+		<set name="name_nobm_bot1">IamNoBot</set>
+		<set name="caracteristic_nobm_bot1">trooper 4</set>
+		<set name="name_nobm_bot2">BeliveMe</set>
+		<set name="caracteristic_nobm_bot2">commando 4</set>
+		<set name="name_nobm_bot3">OrNot</set>
+		<set name="caracteristic_nobm_bot3">soldier 4</set>
+		<set name="name_nobm_bot4">GuessWho</set>
+		<set name="caracteristic_nobm_bot4">guard 4</set>
+		<!-- Botmatch Configuration-->
+		<set name="name_bot1">[AI]_Trooper_4</set>
+		<set name="caracteristic_bot1">trooper 4</set>
+		<set name="name_bot2">[AI]_Commando_4</set>
+		<set name="caracteristic_bot2">commando 4</set>
+		<set name="name_bot3">[AI]_Soldier_4</set>
+		<set name="caracteristic_bot3">soldier 4</set>
+		<set name="name_bot4">[AI]_Guard_4</set>
+		<set name="caracteristic_bot4">guard 4</set>
+		<set name="name_bot5">[AI]_Sharpshooter_4</set>
+		<set name="caracteristic_bot5">sharpshooter 4</set>
+		<set name="name_bot6">[AI]_Python_4</set>
+		<set name="caracteristic_bot6">python 4</set>
+		<set name="name_bot7">[AI]_Cheetah_4</set>
+		<set name="caracteristic_bot7">cheetah 4</set>
+		<set name="name_bot8">[AI]_Boa_4</set>
+		<set name="caracteristic_bot8">boa 4</set>
+		<!-- Regulation of bots -->
+		<set name="frequency_cycle_in_seconds">15</set>
+		<set name="maximum_bot">2</set>
+		<set name="min_level_maxbots_cmd">20</set>
+		<set name="min_level_botmatch_cmd">20</set>
+		<set name="MoveBotsToSpec">False</set>
+		<set name="botmatch">False</set>
+	</settings>
+
+</configuration>
