@@ -1,6 +1,14 @@
 <configuration plugin="idlebots">
 
 	<settings name="settings">
+		<!-- general settings-->
+		<set name="frequency_cycle_in_seconds">15</set>
+		<set name="maximum_bot">2</set>
+		<set name="min_level_maxbots_cmd">20</set>
+		<set name="min_level_botmatch_cmd">20</set>
+		<set name="MoveBotsToSpec">False</set>
+		<set name="botmatch">False</set>
+		<set name="no_bot_maps">ut4_maya</set>
 		<!-- Idlebot Configuration-->
 		<set name="name_nobm_bot1">IamNoBot</set>
 		<set name="caracteristic_nobm_bot1">trooper 4</set>
@@ -27,13 +35,6 @@
 		<set name="caracteristic_bot7">cheetah 4</set>
 		<set name="name_bot8">[AI]_Boa_4</set>
 		<set name="caracteristic_bot8">boa 4</set>
-		<!-- Regulation of bots -->
-		<set name="frequency_cycle_in_seconds">15</set>
-		<set name="maximum_bot">2</set>
-		<set name="min_level_maxbots_cmd">20</set>
-		<set name="min_level_botmatch_cmd">20</set>
-		<set name="MoveBotsToSpec">False</set>
-		<set name="botmatch">False</set>
 	</settings>
 
 </configuration>

@@ -20,10 +20,11 @@
 # 
 #
 # Changelog :
+# 0.0.3 : added unsupported maps
 # 0.0.2 : hosted @ github
 
 
-__version__ = '0.0.2'
+__version__ = '0.0.3'
 __author__  = 'Gammelbob'
 
 
@@ -76,7 +77,7 @@ class IdlebotsPlugin(b3.plugin.Plugin):
 
 	Max_Bot = 0
 	frequency_cycle = 30
-
+	no_bot_maps = ''
 	
 	def onLoadConfig(self):
 		self.NameBot1 = self.config.get('settings', 'name_bot1')
@@ -123,6 +124,10 @@ class IdlebotsPlugin(b3.plugin.Plugin):
 			self._adminPlugin.registerCommand(self, 'botmatch', self.min_level_botmatch_cmd, self.setBotmatch)
 			self._adminPlugin.registerCommand(self, 'maxbots', self.min_level_maxbots_cmd, self.setMaxBots)
 
+		# read our unsupported map list
+		self.no_bot_maps = self.config.get('settings', 'no_bot_maps')
+		self.no_bot_maps = self.no_bot_maps.split(' ')
+
 	def setBotmatch(self, data, client, cmd=None):
 		"""\
 		<on/off> - Activates botmatch (Human vs. Bots)
@@ -166,10 +171,22 @@ class IdlebotsPlugin(b3.plugin.Plugin):
 		self.TempoCheck = threading.Timer(self.frequency_cycle, self.RegulBots)
 		self.TempoCheck.start()
 
-
 	def RegulBots(self):
+		try:
+			curMap = self.console.game.mapName
+		except:
+			# restart again
+			self.CycliqueCheck()
+			return False
 
-		# perfomance boost: kick all bots if no player connected
+		# check for unsupported map
+		for m in self.no_bot_maps:
+			if curMap == m:
+				# restart again
+				self.CycliqueCheck()
+				return False
+
+		# perfomance boost: kick all bots if no players connected
 		clist = self.console.clients.getList()
 		humanplayerfound = False
 		if len(clist) > 0:
@@ -185,7 +202,9 @@ class IdlebotsPlugin(b3.plugin.Plugin):
 				self.CycliqueCheck()
 				return False
 		else:
-			# nothing to do, just restart again
+			# nothing to do
+			#self.console.write('idlebots: DEBUG nothing to do; break')
+			# restart again
 			self.CycliqueCheck()
 			return False
 
